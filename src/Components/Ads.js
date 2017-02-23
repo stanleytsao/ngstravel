@@ -6,12 +6,7 @@ class Ads extends React.Component {
 	render(){
 		return (
 			<Card className="col-md-2">
-			    <CardMedia
-			      overlay={<CardTitle title="Overlay title" subtitle="Overlay subtitle" />}
-			    >
-			      <img src="http://placehold.it/350x150" alt="box" />
-			    </CardMedia>
-			    <CardTitle title="Card title" />
+			    <CardTitle title="Ads" />
 			    <CardText>
 			      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
 			      Donec mattis pretium massa. Aliquam erat volutpat. Nulla facilisi.

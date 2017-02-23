@@ -59,10 +59,6 @@ const tilesData = [
   },
 ];
 
-/**
- * This example demonstrates "featured" tiles, using the `rows` and `cols` props to adjust the size of the tile.
- * The tiles have a customised title, positioned at the top and with a custom gradient `titleBackground`.
- */
 const Main = () => (
   <div className="col-md-10" style={styles.root}>
     <GridList
@@ -75,8 +71,9 @@ const Main = () => (
         <GridTile
           key={tile.img}
           title={tile.title}
-          titlePosition="top"
-          titleBackground="linear-gradient(to bottom, rgba(0,0,0,0.7) 0%,rgba(0,0,0,0.3) 70%,rgba(0,0,0,0) 100%)"
+          subtitle={<span>by <b>{tile.author}</b></span>}
+          // titlePosition="top"
+          titleBackground="linear-gradient(to top, rgba(0,0,0,0.7) 0%,rgba(0,0,0,0.3) 70%,rgba(0,0,0,0) 100%)"
           cols={tile.featured ? 2 : 1}
           rows={tile.featured ? 1 : 1}
         >

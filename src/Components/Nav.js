@@ -9,11 +9,11 @@ class Nav extends React.Component {
 			'Europe' : '歐洲',
 			'Asia' : '亞洲',
 			'Overseas' : '海外精選',
-			'Overseas travel to the US' : '海外來美旅遊',
+			'Overseas to US' : '海外來美旅遊',
 		};
 		
 		var buttons = Object.keys(navButtonNames).map(function(name){
-			return (<Button key={name} name={navButtonNames[name] + name} />)
+			return (<Button key={name} name={navButtonNames[name] + "\n" + name} />)
 		});
 		
 		return (

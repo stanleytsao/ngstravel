@@ -11,13 +11,16 @@ const Header = () => {
 	};
 
 	var buttons = Object.keys(headerButtonNames).map(function(name){
-		return (<Button key={name} name={headerButtonNames[name] + name} />)
+		return (<Button key={name} name={headerButtonNames[name] + "\n" + name} />)
 	});
 
 	return (
 		<header className="container-fluid navbar-fixed-top">
 			<div className="container">
-				<div className="logo">故鄉旅遊 Good Shine Travel</div>
+				<div className="logo">
+					<span className="logoChn">故鄉旅遊</span>
+					<span className="logoEng">Good Shine Travel</span>
+				</div>
 				<div className="headerButtons">{buttons}</div>
 			</div>
 		</header>
