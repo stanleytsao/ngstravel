@@ -1,5 +1,5 @@
 import React from 'react';
-import Button from './Button';
+import Button from './navButton';
 
 class Nav extends React.Component {
 	render(){
@@ -11,11 +11,10 @@ class Nav extends React.Component {
 			'Overseas' : '海外精選',
 			'Overseas travel to the US' : '海外來美旅遊',
 		};
-		var buttons = [];
-
-		for (name in navButtonNames) {
-			buttons.push(<Button name={navButtonNames[name] + name} />)
-		}
+		
+		var buttons = Object.keys(navButtonNames).map(function(name){
+			return (<Button key={name} name={navButtonNames[name] + name} />)
+		});
 		
 		return (
 			<nav>

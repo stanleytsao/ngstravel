@@ -4,22 +4,23 @@ import Nav from './Components/Nav';
 import Main from './Components/Main';
 import Ads from './Components/Ads';
 import Footer from './Components/Footer';
-import injectTapEventPlugin from 'react-tap-event-plugin';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import style from './bootstrap.css'
 
-class App extends React.Component {
-  render(){
-    return (
-      <div>
-        <Header />
+const App = () => (
+  <MuiThemeProvider>
+    <div>
+      <Header />
+      <div className="container">
         <Nav />
-        <Main />
-        <Ads />
-        <Footer />
+        <div className="row">
+          <Main />
+          <Ads />
+        </div>
       </div>
-    );
-  }
-}
-
-injectTapEventPlugin();
+      <Footer />
+    </div>
+  </MuiThemeProvider>
+);
 
 export default App

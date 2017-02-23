@@ -1,28 +1,27 @@
 import React from 'react';
-import Button from './Button';
+import Button from './headerButton';
 
-class Header extends React.Component {
-	render(){
-		var headerButtonNames = {
-			'Home' : '首頁',
-			'Tours' : '旅遊',
-			'Cruises' : '郵輪',
-			'Hotels' : '酒店',
-			'Contact' : '聯繫',
-		};
-		var buttons = [];
+const Header = () => {
+	var headerButtonNames = {
+		'Home' : '首頁',
+		'Tours' : '旅遊',
+		'Cruises' : '郵輪',
+		'Hotels' : '酒店',
+		'Contact' : '聯繫',
+	};
 
-		for (name in headerButtonNames) {
-			buttons.push(<Button name={headerButtonNames[name] + name} />)
-		}
-		
-		return (
-			<header>
-				<h1>故鄉旅遊 Good Shine Travel</h1>
-				{buttons}
-			</header>
-		)
-	}
+	var buttons = Object.keys(headerButtonNames).map(function(name){
+		return (<Button key={name} name={headerButtonNames[name] + name} />)
+	});
+
+	return (
+		<header className="container-fluid navbar-fixed-top">
+			<div className="container">
+				<div className="logo">故鄉旅遊 Good Shine Travel</div>
+				<div className="headerButtons">{buttons}</div>
+			</div>
+		</header>
+	)
 }
 
 export default Header

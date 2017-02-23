@@ -1,0 +1,21 @@
+nav {
+	margin-top: 50px;
+	text-align: center;
+}
+
+nav div {
+	/*margin: 0 3px;*/
+}
+
+header {
+	background-color: red;
+}
+
+.logo {
+	float: left;
+	font-size: 2em;
+}
+
+.headerButtons {
+	float: right;
+}
