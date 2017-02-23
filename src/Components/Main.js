@@ -7,80 +7,121 @@ const styles = {
     flexWrap: 'wrap',
     justifyContent: 'space-around',
   },
-  gridList: {
-    width: 1000,
-    height: 900,
-    overflowY: 'auto',
-  },
 };
 
 const tilesData = [
   {
     img: 'http://lorempixel.com/640/480/nature/1',
     title: 'Breakfast',
-    author: 'jill111',
+    price: '$' + Math.floor((Math.random() * 1000) + 100),
+    popular: true,
   },
   {
     img: 'http://lorempixel.com/640/480/nature/2',
     title: 'Tasty burger',
-    author: 'pashminu',
+    price: 'pashminu',
+    featured: true,
   },
   {
     img: 'http://lorempixel.com/640/480/nature/3',
     title: 'Camera',
-    author: 'Danson67',
+    price: 'Danson67',
+    featured: true,
   },
   {
     img: 'http://lorempixel.com/640/480/nature/4',
     title: 'Morning',
-    author: 'fancycrave1',
+    price: 'fancycrave1',
+    featured: true,
   },
   {
     img: 'http://lorempixel.com/640/480/nature/5',
     title: 'Hats',
-    author: 'Hans',
+    price: 'Hans',
     featured: true,
   },
   {
     img: 'http://lorempixel.com/640/480/nature/6',
     title: 'Honey',
-    author: 'fancycravel',
+    price: 'fancycravel',
     featured: true,
   },
   {
     img: 'http://lorempixel.com/640/480/nature/7',
     title: 'Vegetables',
-    author: 'jill111',
+    price: 'jill111',
+    featured: true,
   },
   {
     img: 'http://lorempixel.com/640/480/nature/8',
     title: 'Water plant',
-    author: 'BkrmadtyaKarki',
+    price: 'BkrmadtyaKarki',
+    featured: true,
   },
 ];
 
+var featured = tilesData.filter( function (tile) {
+  if (tile.featured === true) {
+    return tile;
+  }
+})
+
+var popular = tilesData.filter( function (tile) {
+  if (tile.popular === true) {
+    return tile;
+  }
+})
+console.log(popular);
+
 const Main = () => (
   <div className="col-md-10" style={styles.root}>
-    <GridList
-      cols={3}
-      cellHeight={200}
-      padding={1}
-      style={styles.gridList}
-    >
-      {tilesData.map((tile) => (
-        <GridTile
-          key={tile.img}
-          title={tile.title}
-          subtitle={<span>by <b>{tile.author}</b></span>}
-          // titlePosition="top"
-          titleBackground="linear-gradient(to top, rgba(0,0,0,0.7) 0%,rgba(0,0,0,0.3) 70%,rgba(0,0,0,0) 100%)"
-          cols={tile.featured ? 2 : 1}
-          rows={tile.featured ? 1 : 1}
-        >
-          <img src={tile.img} />
-        </GridTile>
-      ))}
-    </GridList>
+    
+    <div className="col-md-6">
+      <h3>New Packages</h3>
+      <GridList
+        cols={2}
+        cellHeight={150}
+        padding={1}
+      >
+        {popular.map((tile) => (
+          <GridTile
+            key={tile.img}
+            title={tile.title}
+            subtitle={tile.price}
+            // titlePosition="top"
+            titleBackground="linear-gradient(to top, rgba(0,0,0,0.7) 0%,rgba(0,0,0,0.3) 70%,rgba(0,0,0,0) 100%)"
+            cols={2}
+            rows={1}
+          >
+            <img src={tile.img} />
+          </GridTile>
+        ))}
+      </GridList>
+    </div>
+    
+    <div className="col-md-6">
+      <h3>Most Popular</h3>
+      <GridList
+        cols={2}
+        cellHeight={150}
+        padding={1}
+      >
+        {tilesData.map((tile) => (
+          <GridTile
+            key={tile.img}
+            title={tile.title}
+            subtitle={<span>by <b>{tile.price}</b></span>}
+            // titlePosition="top"
+            titleBackground="linear-gradient(to top, rgba(0,0,0,0.7) 0%,rgba(0,0,0,0.3) 70%,rgba(0,0,0,0) 100%)"
+            cols={tile.featured ? 2 : 1}
+            rows={tile.featured ? 1 : 1}
+          >
+            <img src={tile.img} />
+          </GridTile>
+        ))}
+      </GridList>
+    </div>
+
   </div>
 );
 

@@ -1,6 +1,7 @@
 import React from 'react';
-import Header from './Components/Header';
-import Nav from './Components/Nav';
+import Header from './Components/Header/Header';
+import Nav from './Components/Nav/Nav';
+import Slider from './Components/Slider';
 import Main from './Components/Main';
 import Ads from './Components/Ads';
 import Footer from './Components/Footer';
@@ -11,8 +12,9 @@ const App = () => (
   <MuiThemeProvider>
     <div>
       <Header />
+      <Nav />
+      <Slider />
       <div className="container">
-        <Nav />
         <div className="row">
           <Main />
           <Ads />

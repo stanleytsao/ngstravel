@@ -1,6 +1,6 @@
 /*Header*/
 header {
-	background-color: #ddd;
+	background-color: #fdd;
 }
 
 .logo {
@@ -30,8 +30,29 @@ nav {
 	text-align: center;
 }
 
+/*Slider*/
+.slider {
+	margin-top: -46px;
+	text-align: center;
+	background-color: #dfd;
+}
+
+/*Ads*/
+.ads {
+	margin-top: 56px;
+}
+
 /*Footer*/
 footer {
-	background-color: #ddd;
-	padding: 20px 0;
+	background-color: #ddf;
+	margin-top: 30px;
 }
+
+footer .col-md-3 {
+	margin: 30px 0;
+}
+
+footer hr {
+	margin: 6px 0;
+}
+
