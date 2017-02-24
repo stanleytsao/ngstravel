@@ -1,6 +1,11 @@
+body {
+	background-color: #FFF6E5;
+	color: #3E454C;
+}
+
 /*Header*/
 header {
-	background-color: #fdd;
+	background-color: #FF7F66;
 }
 
 .logo {
@@ -24,27 +29,59 @@ header {
 	margin: 0 -5px;
 }
 
+button span {
+	text-transform: none !important;
+	padding: 0px 10px !important;
+}
+
+.headerButtonsVert {
+	position: absolute;
+	right: 30px;
+	margin-top: 50px;
+	max-width: 110px;
+	background-color: #FF7F66;
+	display: block;
+}
+
+.hamburger {
+	display: none;
+	float: right;
+	font-size: 2em;
+}
+
 /*Nav*/
 nav {
 	margin: 55px 0 5px;
 	text-align: center;
 }
 
+nav div {
+	background-color: #2185C5;
+}
+
 /*Slider*/
 .slider {
 	margin-top: -46px;
 	text-align: center;
-	background-color: #dfd;
+	background-color: #7ECEFD;
+}
+
+/*Main*/
+.col-md-6 .button {
+	float: right;
 }
 
 /*Ads*/
 .ads {
 	margin-top: 56px;
+	background-color: #2185C5 !important;
+	max-height: 685px;
+	overflow: hidden;
 }
 
 /*Footer*/
 footer {
-	background-color: #ddf;
+	background-color: #FF7F66;
 	margin-top: 30px;
 }
 
@@ -54,5 +91,54 @@ footer .col-md-3 {
 
 footer hr {
 	margin: 6px 0;
+}
+
+/*Tablet*/
+@media (min-width: 769px) and (max-width: 992px){
+	.col-md-2 {
+		width: 15%;
+		float: left;
+	}
+	.col-md-10 {
+		width: 85%;
+		float: left;
+
+	}
+	.col-md-6 {
+		width: 50%;
+	}
+	.col-md-3 {
+		width: 50%;
+		float: left;
+	}
+	header > * > * {
+		float: none !important;
+		text-align: center;
+	}
+	nav {
+		margin-top: 104px;
+	}
+	.slider {
+		margin-top: -82px;
+	}
+}
+
+/*Mobile*/
+@media (max-width: 768px){
+	.col-md-2, .headerButtons {
+		display: none;
+	}
+	.hamburger {
+		display: block;
+	}
+	.col-md-6 {
+		width: 100%;
+	}
+	main {
+		max-width: 100%;
+	}
+	.slider {
+		margin-top: -82px;
+	}
 }
 

@@ -14,12 +14,12 @@ const App = () => (
       <Header />
       <Nav />
       <Slider />
-      <div className="container">
+      <main className="container">
         <div className="row">
           <Main />
           <Ads />
         </div>
-      </div>
+      </main>
       <Footer />
     </div>
   </MuiThemeProvider>

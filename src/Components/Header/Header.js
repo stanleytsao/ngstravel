@@ -14,6 +14,11 @@ const Header = () => {
 		return (<Button key={name} name={headerButtonNames[name] + "\n" + name} />)
 	});
 
+	function toggleBurger() {
+		var myButton = document.getElementsByClassName("headerButtonsVert");
+		console.log(myButton);
+	}
+
 	return (
 		<header className="container-fluid navbar-fixed-top">
 			<div className="container">
@@ -22,7 +27,10 @@ const Header = () => {
 					<span className="logoEng">Good Shine Travel</span>
 				</div>
 				<div className="headerButtons">{buttons}</div>
+				
+				<a className="hamburger" onClick={toggleBurger} >☰</a>
 			</div>
+			<div className="headerButtonsVert">{buttons}</div>
 		</header>
 	)
 }

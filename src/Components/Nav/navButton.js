@@ -8,7 +8,7 @@ class Button extends React.Component {
 	}
 
 	render() {
-		return <RaisedButton label={this.props.name} onClick={this.handleClick} />
+		return <RaisedButton className="button" label={this.props.name} onClick={this.handleClick} />
 	}
 }
 
