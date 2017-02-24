@@ -16,7 +16,22 @@ const Header = () => {
 
 	function toggleBurger() {
 		var myButton = document.getElementsByClassName("headerButtonsVert");
-		console.log(myButton);
+		// console.log(window.innerWidth);
+		if (myButton["0"].style.marginTop === '-300px') {
+			myButton["0"].style.marginTop = '0';
+		} else {
+			myButton["0"].style.marginTop = '-300px';
+		}
+		window.onresize = function (event) {
+			if (window.innerWidth > 768) {
+				myButton["0"].style.marginTop = '-300px';
+			}
+		}
+
+	}
+
+	var vertStyle = {
+		marginTop: '-250px',
 	}
 
 	return (
@@ -30,7 +45,7 @@ const Header = () => {
 				
 				<a className="hamburger" onClick={toggleBurger} >☰</a>
 			</div>
-			<div className="headerButtonsVert">{buttons}</div>
+			<div className="headerButtonsVert" style={vertStyle} >{buttons}</div>
 		</header>
 	)
 }

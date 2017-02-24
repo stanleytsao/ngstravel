@@ -4,7 +4,7 @@ body {
 }
 
 /*Header*/
-header {
+header, header > * {
 	background-color: #FF7F66;
 }
 
@@ -36,17 +36,23 @@ button span {
 
 .headerButtonsVert {
 	position: absolute;
+	z-index: -1;
 	right: 30px;
-	margin-top: 50px;
 	max-width: 110px;
 	background-color: #FF7F66;
 	display: block;
+	transition: 0.5s ease;
 }
 
 .hamburger {
 	display: none;
 	float: right;
 	font-size: 2em;
+}
+
+.hamburger:hover {
+	text-decoration: none;
+	cursor: pointer;
 }
 
 /*Nav*/
