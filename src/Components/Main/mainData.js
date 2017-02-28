@@ -1,5 +1,3 @@
-import React from 'react';
-
 const mainData = [
   {
     img: 'http://lorempixel.com/640/480/nature/1',

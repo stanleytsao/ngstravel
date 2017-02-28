@@ -1,5 +1,5 @@
 import React from 'react';
-import {Card, CardActions, CardTitle, CardText} from 'material-ui/Card';
+import {Card, CardTitle, CardText} from 'material-ui/Card';
 
 class Ads extends React.Component {
 	render(){

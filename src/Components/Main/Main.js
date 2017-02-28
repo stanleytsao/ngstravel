@@ -1,7 +1,6 @@
 import React from 'react';
 import {GridList, GridTile} from 'material-ui/GridList';
-import Button from '../Nav/navButton';
-import FlatButton from 'material-ui/FlatButton';
+import Button from '../Button';
 import mainData from './mainData'
 
 const styles = {
@@ -44,7 +43,7 @@ const Main = () => (
             rows={1}
           >
             <a href={tile.img}>
-              <img src={tile.img} />
+              <img src={tile.img} alt={tile.title} />
             </a>
           </GridTile>
         ))}
@@ -69,7 +68,7 @@ const Main = () => (
             rows={1}
           >
             <a href={tile.img}>
-              <img src={tile.img} />
+              <img src={tile.img} alt={tile.title} />
             </a>
           </GridTile>
         ))}
