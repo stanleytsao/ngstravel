@@ -1,6 +1,5 @@
 import React from 'react';
 import {GridList, GridTile} from 'material-ui/GridList';
-import Button from '../Button';
 import mainData from './mainData'
 
 const styles = {
@@ -24,7 +23,7 @@ var popular = mainData.filter( function (tile) {
 })
 
 const Main = () => (
-  <div className="col-md-10" style={styles.root}>
+  <div className="col-md-10 main" style={styles.root}>
     
     <div className="col-md-6">
       <h3>New Packages</h3>
@@ -48,7 +47,6 @@ const Main = () => (
           </GridTile>
         ))}
       </GridList>
-      <Button key='featured' name='Show More' />
     </div>
     
     <div className="col-md-6">
@@ -73,7 +71,6 @@ const Main = () => (
           </GridTile>
         ))}
       </GridList>
-      <Button key='popular' name='Show More' />
     </div>
 
   </div>

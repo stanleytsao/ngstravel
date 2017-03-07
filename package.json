@@ -7,6 +7,7 @@
     "@types/react-tap-event-plugin": "0.0.30",
     "material-ui": "^0.17.0",
     "react-scripts": "0.9.0",
+    "react-slick": "^0.14.6",
     "react-tap-event-plugin": "^2.0.1"
   },
   "dependencies": {

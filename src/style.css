@@ -11,10 +11,6 @@ header, header > .container {
 	background-color: #FF7F66;
 }
 
-.logo {
-	float: left;
-}
-
 .logoChn {
 	font-size: 2.5em;
 }
@@ -24,8 +20,12 @@ header, header > .container {
 }
 
 .headerButtons {
-	float: right;
-	margin: 10px 0 0;
+	margin: 0;
+	padding-top: 19px;
+}
+
+.eng {
+	min-width: 75px !important;
 }
 
 button span {
@@ -35,7 +35,6 @@ button span {
 
 .navVert {
 	position: absolute;
-	z-index: -1;
 	right: 30px;
 	max-width: 110px;
 	display: block;
@@ -43,10 +42,13 @@ button span {
 }
 
 .navVert > * {
+	z-index: 1;
 	float: right;
+	width: 105px;
 }
 
 .hamburger {
+	z-index: 20;
 	display: none;
 	float: right;
 	font-size: 2em;
@@ -62,10 +64,9 @@ button span {
 }
 
 /*Slider*/
-.slider {
-	margin-top: -46px;
-	text-align: center;
-	background-color: #7ECEFD;
+.slick-slider{
+	margin-top: 75px;
+	overflow: hidden;
 }
 
 /*Main*/
@@ -97,11 +98,11 @@ footer hr {
 
 /*Tablet*/
 @media (min-width: 769px) and (max-width: 992px){
-	.col-md-2 {
+	.ads {
 		width: 15%;
 		float: left;
 	}
-	.col-md-10 {
+	.main {
 		width: 85%;
 		float: left;
 
@@ -127,7 +128,7 @@ footer hr {
 
 /*Mobile*/
 @media (max-width: 768px){
-	.col-md-2, .headerButtons {
+	.ads, .headerButtons {
 		display: none;
 	}
 	.hamburger {
