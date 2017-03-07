@@ -17,6 +17,7 @@ var Slideshow = React.createClass({
 				<img src='http://lorempixel.com/1000/300/food/1' alt="Food 1"/>
 				<img src='http://lorempixel.com/1000/300/food/2' alt="Food 2"/>
 				<img src='http://lorempixel.com/1000/300/food/3' alt="Food 3"/>
+				<img src='http://lorempixel.com/1000/300/food/4' alt="Food 4"/>
 			</Slider>
 		)		
 	}
