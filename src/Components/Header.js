@@ -1,4 +1,5 @@
 import React from 'react';
+// import RaisedButton from 'material-ui/RaisedButton';
 import Button from './Button';
 
 const Header = () => {
@@ -36,7 +37,6 @@ const Header = () => {
 
 	}
 	
-// <button className="lang">English</button>
 	return (
 		<header className="container-fluid navbar-fixed-top">
 			<div className="container">
