@@ -64,6 +64,15 @@ button span {
 }
 
 /*Slider*/
+#region {
+	position: absolute;
+	font-size: 3em;
+	color: #FFF6E5;
+	left: 45%;
+	top: 20%;
+	z-index: 20;
+}
+
 .slick-slider{
 	margin-top: 75px;
 	overflow: hidden;

@@ -2,6 +2,7 @@ import React from 'react';
 import RaisedButton from 'material-ui/RaisedButton';
 import {GridList, GridTile} from 'material-ui/GridList';
 import mainData from './mainData'
+import Slideshow from '../Slider';
 
 const FilteredData = ({name}) => {
 
@@ -25,7 +26,7 @@ const FilteredData = ({name}) => {
 
   var showFeatured = (
     <GridList cols={2} cellHeight={170} padding={1}>
-      {filterFeatured.map((tile) => (
+      {filterFeatured.slice(0,4).map((tile) => (
         <GridTile
           key={tile.title}
           title={tile.title + ' - ' + tile.price}
@@ -44,7 +45,7 @@ const FilteredData = ({name}) => {
 
   var showNew = (
     <GridList cols={2} cellHeight={170} padding={1}>
-      {filterNew.map((tile) => (
+      {filterNew.slice(0,4).map((tile) => (
         <GridTile
           key={tile.title}
           title={tile.title + ' - ' + tile.price}
@@ -136,6 +137,7 @@ class Main extends React.Component {
           </div>
         </header>
         
+        <Slideshow name={this.state.value}/>
         <FilteredData name={this.state.value}/>
       </div>
     )
