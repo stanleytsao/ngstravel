@@ -1,6 +1,6 @@
 import React from 'react';
 import Slider from 'react-slick';
-import mainData from './Main/mainData'
+import mainData from './mainData'
 
 const Slideshow = ({name}) => {
 	
@@ -18,7 +18,7 @@ const Slideshow = ({name}) => {
 	})
 
 	var sliderImages = filterRegion.slice(0,4).map((data) => (
-		<img src={data.img} alt={data.title} height="300"/>
+		<img key={data.title} src={data.img} alt={data.title} height="300"/>
 	))
 
 	var settings = {

@@ -1,8 +1,8 @@
 import React from 'react';
-import RaisedButton from 'material-ui/RaisedButton';
+import FlatButton from 'material-ui/FlatButton';
 import {GridList, GridTile} from 'material-ui/GridList';
 import mainData from './mainData'
-import Slideshow from '../Slider';
+import Slideshow from './Slider';
 
 const FilteredData = ({name}) => {
 
@@ -88,7 +88,7 @@ class Main extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      value: 'Taiwan'
+      value: 'Home'
     }
   }
   handleButton(name) {
@@ -111,7 +111,7 @@ class Main extends React.Component {
         break;
       case "Overseas": this.setState({ value: name })
         break;
-      case "Travel to US": this.setState({ value: name })
+      case "Inbound": this.setState({ value: name })
         break;
     }
   }
@@ -124,16 +124,19 @@ class Main extends React.Component {
               <span className="logoChn">故鄉旅遊</span><br />
               <span className="logoEng">Good Shine Travel</span>
             </div>
-            <RaisedButton onClick = {() => {this.handleButton("Home")}}>Home</RaisedButton>
-            <RaisedButton onClick = {() => {this.handleButton("Taiwan")}}>Taiwan</RaisedButton>
-            <RaisedButton onClick = {() => {this.handleButton("China")}}>China</RaisedButton>
-            <RaisedButton onClick = {() => {this.handleButton("US")}}>US</RaisedButton>
-            <RaisedButton onClick = {() => {this.handleButton("Europe")}}>Europe</RaisedButton>
-            <RaisedButton onClick = {() => {this.handleButton("Asia")}}>Asia</RaisedButton>
-            <RaisedButton onClick = {() => {this.handleButton("Cruises")}}>Cruises</RaisedButton>
-            <RaisedButton onClick = {() => {this.handleButton("Hotels")}}>Hotels</RaisedButton>
-            <RaisedButton onClick = {() => {this.handleButton("Overseas")}}>Overseas</RaisedButton>
-            <RaisedButton onClick = {() => {this.handleButton("Travel to US")}}>Travel to US</RaisedButton>
+            <div className="col-md-10 text-right">
+              <FlatButton onClick = {() => {this.handleButton("Home")}}>Home</FlatButton>
+              <FlatButton onClick = {() => {this.handleButton("Taiwan")}}>Taiwan</FlatButton>
+              <FlatButton onClick = {() => {this.handleButton("China")}}>China</FlatButton>
+              <FlatButton onClick = {() => {this.handleButton("US")}}>US</FlatButton>
+              <FlatButton onClick = {() => {this.handleButton("Europe")}}>Europe</FlatButton>
+              <FlatButton onClick = {() => {this.handleButton("Asia")}}>Asia</FlatButton>
+              <FlatButton onClick = {() => {this.handleButton("Cruises")}}>Cruises</FlatButton>
+              <FlatButton onClick = {() => {this.handleButton("Hotels")}}>Hotels</FlatButton>
+              <FlatButton onClick = {() => {this.handleButton("Overseas")}}>Overseas</FlatButton>
+              <FlatButton onClick = {() => {this.handleButton("Inbound")}}>Inbound</FlatButton>
+            </div>
+            
           </div>
         </header>
         

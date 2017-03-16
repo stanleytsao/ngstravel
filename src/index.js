@@ -1,8 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-// import Header from './Components/Header';
-// import Slideshow from './Components/Slider';
-import Main from './Components/Main/Main';
+import Main from './Components/Main';
 import Ads from './Components/Ads';
 import Footer from './Components/Footer';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
@@ -11,9 +9,6 @@ import './style.css'
 import injectTapEventPlugin from 'react-tap-event-plugin';
 injectTapEventPlugin();
 
-
-// <Header />
-// <Slideshow />
 const App = () => (
   <MuiThemeProvider>
     <div>
