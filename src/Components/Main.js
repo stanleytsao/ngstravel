@@ -92,6 +92,7 @@ class Main extends React.Component {
       value: 'Home'
     }
   }
+  // Switches main render state on Nav button clicks
   handleButton(name) {
     switch(name) {
       case "Home": this.setState({ value: name })
@@ -116,6 +117,14 @@ class Main extends React.Component {
         break;
     }
   }
+  // Toggle Nav on Hamburger click
+  toggle() {
+    if (document.getElementById("nav").className === "col-md-9 text-right") {
+      document.getElementById("nav").className = "col-md-9 text-right hide"
+    } else {
+      document.getElementById("nav").className = "col-md-9 text-right"
+    }
+  }
   render() {
     return (
       <div>
@@ -126,7 +135,7 @@ class Main extends React.Component {
             <div className="logo col-md-3">
               <img src="http://placehold.it/200x100" alt="logo"/>
             </div>
-            <nav className="col-md-9 text-right">
+            <nav id="nav" className="col-md-9 text-right">
               <div className="row">
                 <FlatButton onClick = {() => {this.handleButton("Home")}}><p className="chn">首頁</p><p>Home</p></FlatButton>
                 <FlatButton onClick = {() => {this.handleButton("Taiwan")}}><p className="chn">台灣</p><p>Taiwan</p></FlatButton>
@@ -142,7 +151,7 @@ class Main extends React.Component {
                 <FlatButton onClick = {() => {this.handleButton("Inbound")}}><p className="chn">海外來美</p><p>Inbound</p></FlatButton>
               </div>
             </nav>
-            <a id="hamburger" href="#">test<i className="fa fa-bars" aria-hidden="true"></i></a>
+            <a id="hamburger" href="#" onClick = {() => {this.toggle()}}><i className="fa fa-bars fa-3x" aria-hidden="true"></i></a>
           </div>
         </header>
         <main className="container">
@@ -157,5 +166,18 @@ class Main extends React.Component {
     )
   }
 }
+
+// Fix responsive Nav
+var resize = (() => {
+  var update = () => {
+    if (window.innerWidth > 720) {
+      document.getElementById("nav").className = "col-md-9 text-right"
+    } else {
+      document.getElementById("nav").className = "col-md-9 text-right hide"
+    }
+  }
+  window.addEventListener("load", update);
+  window.addEventListener("resize", update);
+})();
 
 export default Main

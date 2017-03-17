@@ -33,12 +33,6 @@ header, footer {
 	background: linear-gradient(60deg, $alt-primary-color 0%, $alt-secondary-color 100%);
 }
 
-#hamburger {
-	position: absolute;
-	top: 10px;
-	right: 10px;
-}
-
 /*  Header  */
 header {
 	img {
@@ -53,6 +47,11 @@ header {
 	}
 	button {
 		height: 50px !important;
+	}
+	@media (min-width: 721px) {
+		#hamburger {
+			display: none;
+		}
 	}
 	@media (min-width: 721px) and (max-width: 992px){
 		.col-md-3 {
@@ -78,7 +77,12 @@ header {
 		button {
 			height: 40px !important;
 		}
-		
+		#hamburger {
+			display: block;
+			position: absolute;
+			top: 20px;
+			right: 31px;
+		}
 	}
 }
 
