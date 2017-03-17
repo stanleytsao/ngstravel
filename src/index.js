@@ -1,24 +1,21 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Main from './Components/Main';
-import Ads from './Components/Ads';
 import Footer from './Components/Footer';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import './fontAwesome/css/font-awesome.min.css'
 import './bootstrap.css';
-import './style.css'
+import './css/style.css'
 import injectTapEventPlugin from 'react-tap-event-plugin';
 injectTapEventPlugin();
 
 const App = () => (
-  <MuiThemeProvider>
-    <div>
-      <main className="container">
-        <Main />
-        <Ads />
-      </main>
-      <Footer />
-    </div>
-  </MuiThemeProvider>
+	<MuiThemeProvider>
+		<div>
+	    	<Main />
+	    	<Footer />
+		</div>
+	</MuiThemeProvider>
 );
 
 ReactDOM.render(

@@ -3,6 +3,7 @@ import FlatButton from 'material-ui/FlatButton';
 import {GridList, GridTile} from 'material-ui/GridList';
 import mainData from './mainData'
 import Slideshow from './Slider';
+import Ads from './Ads';
 
 const FilteredData = ({name}) => {
 
@@ -31,7 +32,7 @@ const FilteredData = ({name}) => {
           key={tile.title}
           title={tile.title + ' - ' + tile.price}
           subtitle={tile.description}
-          titleBackground="linear-gradient(to top, rgba(0,0,0,0.7) 0%,rgba(0,0,0,0.3) 70%,rgba(0,0,0,0) 100%)"
+          titleBackground="linear-gradient(to top, rgba(255,255,255,0.8) 0%,rgba(255,255,255,0.5) 75%,rgba(255,255,255,0) 100%)"
           cols={2}
           rows={1}
         >
@@ -50,7 +51,7 @@ const FilteredData = ({name}) => {
           key={tile.title}
           title={tile.title + ' - ' + tile.price}
           subtitle={tile.description}
-          titleBackground="linear-gradient(to top, rgba(0,0,0,0.7) 0%,rgba(0,0,0,0.3) 70%,rgba(0,0,0,0) 100%)"
+          titleBackground="linear-gradient(to top, rgba(255,255,255,0.7) 0%,rgba(255,255,255,0.4) 75%,rgba(255,255,255,0) 100%)"
           cols={2}
           rows={1}
         >
@@ -70,7 +71,7 @@ const FilteredData = ({name}) => {
     },
   };
   return (
-    <div className="col-md-10 main" style={styles.root}>
+    <div style={styles.root}>
       <div className="col-md-6">
       <h3>Featured Packages</h3>
       {showFeatured}
@@ -118,30 +119,40 @@ class Main extends React.Component {
   render() {
     return (
       <div>
+        <Slideshow name={this.state.value}/>
         <header className="container-fluid navbar-fixed-top">
+          <hr className="mobileHeight" />
           <div className="container">
-            <div className="logo col-md-2">
-              <span className="logoChn">故鄉旅遊</span><br />
-              <span className="logoEng">Good Shine Travel</span>
+            <div className="logo col-md-3">
+              <img src="http://placehold.it/200x100" alt="logo"/>
             </div>
-            <div className="col-md-10 text-right">
-              <FlatButton onClick = {() => {this.handleButton("Home")}}>Home</FlatButton>
-              <FlatButton onClick = {() => {this.handleButton("Taiwan")}}>Taiwan</FlatButton>
-              <FlatButton onClick = {() => {this.handleButton("China")}}>China</FlatButton>
-              <FlatButton onClick = {() => {this.handleButton("US")}}>US</FlatButton>
-              <FlatButton onClick = {() => {this.handleButton("Europe")}}>Europe</FlatButton>
-              <FlatButton onClick = {() => {this.handleButton("Asia")}}>Asia</FlatButton>
-              <FlatButton onClick = {() => {this.handleButton("Cruises")}}>Cruises</FlatButton>
-              <FlatButton onClick = {() => {this.handleButton("Hotels")}}>Hotels</FlatButton>
-              <FlatButton onClick = {() => {this.handleButton("Overseas")}}>Overseas</FlatButton>
-              <FlatButton onClick = {() => {this.handleButton("Inbound")}}>Inbound</FlatButton>
-            </div>
-            
+            <nav className="col-md-9 text-right">
+              <div className="row">
+                <FlatButton onClick = {() => {this.handleButton("Home")}}><p className="chn">首頁</p><p>Home</p></FlatButton>
+                <FlatButton onClick = {() => {this.handleButton("Taiwan")}}><p className="chn">台灣</p><p>Taiwan</p></FlatButton>
+                <FlatButton onClick = {() => {this.handleButton("China")}}><p className="chn">中國</p><p>China</p></FlatButton>
+                <FlatButton onClick = {() => {this.handleButton("US")}}><p className="chn">美加</p><p>US</p></FlatButton>
+                <FlatButton onClick = {() => {this.handleButton("Europe")}}><p className="chn">歐洲</p><p>Europe</p></FlatButton>
+              </div>
+              <div className="row">
+                <FlatButton onClick = {() => {this.handleButton("Asia")}}><p className="chn">亞洲</p><p>Asia</p></FlatButton>
+                <FlatButton onClick = {() => {this.handleButton("Cruises")}}><p className="chn">郵輪</p><p>Cruises</p></FlatButton>
+                <FlatButton onClick = {() => {this.handleButton("Hotels")}}><p className="chn">酒店</p><p>Hotels</p></FlatButton>
+                <FlatButton onClick = {() => {this.handleButton("Overseas")}}><p className="chn">海外</p><p>Overseas</p></FlatButton>
+                <FlatButton onClick = {() => {this.handleButton("Inbound")}}><p className="chn">海外來美</p><p>Inbound</p></FlatButton>
+              </div>
+            </nav>
+            <a id="hamburger" href="#">test<i className="fa fa-bars" aria-hidden="true"></i></a>
           </div>
         </header>
-        
-        <Slideshow name={this.state.value}/>
-        <FilteredData name={this.state.value}/>
+        <main className="container">
+          <div className="col-md-10">
+            <FilteredData name={this.state.value}/>
+          </div>
+          <div className="col-md-2">
+            <Ads />
+          </div>
+        </main>
       </div>
     )
   }

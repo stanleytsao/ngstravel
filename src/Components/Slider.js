@@ -17,8 +17,8 @@ const Slideshow = ({name}) => {
 		}
 	})
 
-	var sliderImages = filterRegion.slice(0,4).map((data) => (
-		<img key={data.title} src={data.img} alt={data.title} height="300"/>
+	var sliderImages = filterRegion.slice(0,3).map((data) => (
+		<img key={data.title} src={data.img} alt={data.title} height="400px"/>
 	))
 
 	var settings = {
