@@ -26,41 +26,49 @@ const FilteredData = ({name}) => {
   })
 
   var showFeatured = (
-    <GridList cols={2} cellHeight={170} padding={1}>
-      {filterFeatured.slice(0,4).map((tile) => (
-        <GridTile
-          key={tile.title}
-          title={tile.title + ' - ' + tile.price}
-          subtitle={tile.description}
-          titleBackground="linear-gradient(to top, rgba(255,255,255,0.8) 0%,rgba(255,255,255,0.5) 75%,rgba(255,255,255,0) 100%)"
-          cols={2}
-          rows={1}
-        >
-          <a href={tile.img}>
-            <img src={tile.img} alt={tile.title} />
-          </a>
-        </GridTile>
-      ))}
-    </GridList>
+    <div>
+      <GridList cols={2} cellHeight={170} padding={1}>
+        {filterFeatured.slice(0,4).map((tile) => (
+          <GridTile
+            key={tile.title}
+            title={tile.title + ' - ' + tile.price}
+            subtitle={tile.description}
+            titleBackground="linear-gradient(to top, rgba(255,255,255,0.8) 0%,rgba(255,255,255,0.5) 75%,rgba(255,255,255,0) 100%)"
+            cols={2}
+            rows={1}
+          >
+            <a href={tile.img}>
+              <img src={tile.img} alt={tile.title} />
+            </a>
+          </GridTile>
+        ))}
+      </GridList>
+      <FlatButton>Show More</FlatButton>
+    </div>
+    
   )
 
   var showNew = (
-    <GridList cols={2} cellHeight={170} padding={1}>
-      {filterNew.slice(0,4).map((tile) => (
-        <GridTile
-          key={tile.title}
-          title={tile.title + ' - ' + tile.price}
-          subtitle={tile.description}
-          titleBackground="linear-gradient(to top, rgba(255,255,255,0.7) 0%,rgba(255,255,255,0.4) 75%,rgba(255,255,255,0) 100%)"
-          cols={2}
-          rows={1}
-        >
-          <a href={tile.img}>
-            <img src={tile.img} alt={tile.title} />
-          </a>
-        </GridTile>
-      ))}
-    </GridList>
+    <div>
+      <GridList cols={2} cellHeight={170} padding={1}>
+        {filterNew.slice(0,4).map((tile) => (
+          <GridTile
+            key={tile.title}
+            title={tile.title + ' - ' + tile.price}
+            subtitle={tile.description}
+            titleBackground="linear-gradient(to top, rgba(255,255,255,0.7) 0%,rgba(255,255,255,0.4) 75%,rgba(255,255,255,0) 100%)"
+            cols={2}
+            rows={1}
+          >
+            <a href={tile.img}>
+              <img src={tile.img} alt={tile.title} />
+            </a>
+          </GridTile>
+        ))}
+      </GridList>
+      <FlatButton>Show More</FlatButton>
+    </div>
+    
   )
 
   var styles = {
@@ -130,7 +138,6 @@ class Main extends React.Component {
       <div>
         <Slideshow name={this.state.value}/>
         <header className="container-fluid navbar-fixed-top">
-          <hr className="mobileHeight" />
           <div className="container">
             <div className="logo col-md-3">
               <img src="http://placehold.it/200x100" alt="logo"/>

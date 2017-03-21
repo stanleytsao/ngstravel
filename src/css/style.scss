@@ -1,12 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto');
 
-.mobileHeight {
-	width: 100%;
-	border-top: 5px solid #f00;
-	position: absolute;
-	top: 480px;
-}
-
 $font-stack:	'Roboto', sans-serif;
 $primary-color:	rgba(255, 237, 188, 1);
 $alt-primary-color:	rgba(255, 237, 188, 0.9);
@@ -33,10 +26,17 @@ header, footer {
 	background: linear-gradient(60deg, $alt-primary-color 0%, $alt-secondary-color 100%);
 }
 
+#region {
+	position: absolute;
+	margin: 200px 50% 0;
+    font-size: 3em;
+    z-index: 999;
+}
+
 /*  Header  */
 header {
 	img {
-		max-height: 100px;
+		max-height: 90px;
 	}
 	.chn {
 		font-size: 1.6em;
@@ -46,7 +46,7 @@ header {
 		margin: 0;
 	}
 	button {
-		height: 50px !important;
+		height: 45px !important;
 	}
 	@media (min-width: 721px) {
 		#hamburger {
