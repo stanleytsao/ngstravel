@@ -1,8 +1,6 @@
 # NGSTravel.com
 
----------
-
-For this project, I rebuilt the non-responsive website for a Chinese travel agency into a mobile and tablet friendly website.
+For this project, I rebuilt the non-responsive website for a Chinese travel agency into a mobile and tablet friendly website. I collapsed dozens of seperate pages into a lightning fast single page navigation app using ReactJS.
 
 Here is a demo of the current state of the website in development: [Heroku server](https://ngstravel.herokuapp.com/)
 

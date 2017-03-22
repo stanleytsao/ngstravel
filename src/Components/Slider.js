@@ -15,6 +15,7 @@ const Slideshow = ({name}) => {
 		if (data.region === name || name === "Home") {
 			return data;
 		}
+		return false;
 	})
 
 	var sliderImages = filterRegion.slice(0,3).map((data) => (

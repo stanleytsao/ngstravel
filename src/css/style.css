@@ -19,6 +19,9 @@ header, footer {
   font-size: 3em;
   z-index: 999; }
 
+.pkgImg {
+  width: 100%; }
+
 /*  Header  */
 header img {
   max-height: 90px; }

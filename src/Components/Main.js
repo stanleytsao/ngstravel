@@ -11,23 +11,26 @@ const FilteredData = ({name}) => {
     if (data.region === name || name === "Home") {
       return data;
     }
+    return false;
   })
 
   var filterFeatured = filterRegion.filter( function (data) {
     if (data.featured === true) {
       return data;
     }
+    return false;
   })
 
   var filterNew = filterRegion.filter( function (data) {
     if (data.new === true) {
       return data;
     }
+    return false;
   })
 
   var showFeatured = (
     <div>
-      <GridList cols={2} cellHeight={170} padding={1}>
+      <GridList cols={2} cellHeight={250} padding={1}>
         {filterFeatured.slice(0,4).map((tile) => (
           <GridTile
             key={tile.title}
@@ -38,7 +41,7 @@ const FilteredData = ({name}) => {
             rows={1}
           >
             <a href={tile.img}>
-              <img src={tile.img} alt={tile.title} />
+              <img className="pkgImg" src={tile.img} alt={tile.title} />
             </a>
           </GridTile>
         ))}
@@ -50,7 +53,7 @@ const FilteredData = ({name}) => {
 
   var showNew = (
     <div>
-      <GridList cols={2} cellHeight={170} padding={1}>
+      <GridList cols={2} cellHeight={250} padding={1}>
         {filterNew.slice(0,4).map((tile) => (
           <GridTile
             key={tile.title}
@@ -61,7 +64,7 @@ const FilteredData = ({name}) => {
             rows={1}
           >
             <a href={tile.img}>
-              <img src={tile.img} alt={tile.title} />
+              <img className="pkgImg" src={tile.img} alt={tile.title} />
             </a>
           </GridTile>
         ))}
@@ -123,6 +126,7 @@ class Main extends React.Component {
         break;
       case "Inbound": this.setState({ value: name })
         break;
+      default: console.log('default case');
     }
   }
   // Toggle Nav on Hamburger click
@@ -175,7 +179,7 @@ class Main extends React.Component {
 }
 
 // Fix responsive Nav
-var resize = (() => {
+(() => {
   var update = () => {
     if (window.innerWidth > 720) {
       document.getElementById("nav").className = "col-md-9 text-right"
